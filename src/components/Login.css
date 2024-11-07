@@ -1,0 +1,72 @@
+.hero_login {
+  background-image: url("../assets/hero_image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login_form {
+  height: 22rem;
+  width: 28rem;
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
+
+  position: absolute;
+  left: 60rem;
+  top: 6.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.title_login {
+  font-size: 24px;
+  color: #00a278;
+  font-weight: bold;
+}
+.login_form_container {
+  width: 85%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.detail_login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.detail_login textarea {
+  height: 55px;
+  resize: none;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+.detail_login button {
+  height: 45px;
+  border: none;
+  background-color: #00a278;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.23);
+}
+.detail_login button:hover {
+  background-color: #017959;
+}
+.account {
+  font-size: 16px;
+}
+.account span {
+  font-weight: bold;
+  color: #0ebe8f;
+  cursor: pointer;
+}

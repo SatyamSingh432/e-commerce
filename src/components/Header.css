@@ -14,12 +14,21 @@
   color: #00a278;
   background-color: white;
   padding: 0.8rem 1rem;
+  cursor: pointer;
 }
 .btn_reg {
   font-size: 0.9rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
   border: 0;
   background-color: #00a278;
   color: white;
   padding: 0.8rem 1rem;
   border-radius: 0.3rem;
+  cursor: pointer;
+}
+.btn_reg:hover {
+  background-color: #017959;
+}
+.btn_login:hover {
+  color: #017959;
 }
