@@ -1,0 +1,28 @@
+.main_container {
+  /* position: relative; */
+}
+.hero {
+  background-image: url("../assets/hero_image.png");
+  height: 30rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+}
+.hero_heading {
+  position: relative;
+  font-size: 3rem;
+  width: 50%;
+  left: 20rem;
+  color: white;
+}
+.hero_highlight {
+  color: black;
+  background-color: rgb(255, 191, 0);
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}

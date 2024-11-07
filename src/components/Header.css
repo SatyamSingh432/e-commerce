@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  position: absolute;
+  background-color: white;
+}
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.btn_login {
+  font-size: 0.9rem;
+  border: 0;
+  color: #00a278;
+  background-color: white;
+  padding: 0.8rem 1rem;
+}
+.btn_reg {
+  font-size: 0.9rem;
+  border: 0;
+  background-color: #00a278;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 0.3rem;
+}

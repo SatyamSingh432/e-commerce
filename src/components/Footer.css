@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 12rem;
+  background-color: #042c22;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.footer_content {
+  width: 38%;
+  color: rgba(255, 255, 255, 0.428);
+  text-align: center;
+}
