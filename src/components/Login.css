@@ -13,7 +13,19 @@
   width: 28rem;
   background-color: white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
-
+  position: absolute;
+  left: 60rem;
+  top: 6.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.register_form {
+  height: 28rem;
+  width: 28rem;
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
   position: absolute;
   left: 60rem;
   top: 6.4rem;
@@ -69,4 +81,14 @@
   font-weight: bold;
   color: #0ebe8f;
   cursor: pointer;
+}
+.password_limit {
+  display: flex;
+  flex-direction: column;
+}
+.password_limit p {
+  padding-left: 15px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.428);
+  margin: 6px 0 0 0;
 }

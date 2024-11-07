@@ -1,6 +1,5 @@
-.main_container {
-  /* position: relative; */
-}
+/* .main_container {
+} */
 .hero {
   background-image: url("../assets/hero_image.png");
   height: 30rem;
@@ -11,8 +10,8 @@
   justify-content: center;
   align-items: center;
 }
-.container {
-}
+/* .container {
+} */
 .hero_heading {
   position: relative;
   font-size: 3rem;
