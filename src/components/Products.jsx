@@ -131,18 +131,21 @@ const Products = () => {
     <div className="main_container">
       <Header />
       {displayProducts()}
-      <div className="product_grid">
-        {productData.map((ele) => {
-          return (
-            <ProductCard
-              name={ele.name}
-              key={ele.name}
-              price={ele.cost}
-              rating={ele.rating}
-              image={ele.image}
-            />
-          );
-        })}
+      <div className="product_grid_container">
+        <h2>PRODUCTS</h2>
+        <div className="product_grid">
+          {productData.map((ele) => {
+            return (
+              <ProductCard
+                name={ele.name}
+                key={ele.name}
+                price={ele.cost}
+                rating={ele.rating}
+                image={ele.image}
+              />
+            );
+          })}
+        </div>
       </div>
 
       <Footer />
