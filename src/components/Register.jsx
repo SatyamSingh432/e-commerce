@@ -1,11 +1,11 @@
-/* eslint-disable react/no-unescaped-entities */
 import Header from "./Header";
 import Footer from "./Footer";
 import "./Login.css";
+import { Link } from "react-router-dom";
 const Register = () => {
   return (
     <>
-      <Header />
+      <Header hasHiddenAuth />
       <div className="container_login">
         <div className="hero_login">
           <div className="register_form">
@@ -33,7 +33,10 @@ const Register = () => {
                 <button>REGISTER NOW</button>
               </div>
               <p className="account">
-                Already have an account? <span>Login here</span>
+                Already have an account?{" "}
+                <Link className="link" to={"/login"}>
+                  Login here
+                </Link>
               </p>
             </div>
           </div>

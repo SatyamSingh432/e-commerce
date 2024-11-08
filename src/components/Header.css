@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  position: absolute;
+  /* position: absolute; */
   background-color: white;
 }
 .header_container {
@@ -31,4 +31,11 @@
 }
 .btn_login:hover {
   color: #017959;
+}
+.explore_btn {
+  color: #00a278;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 500;
 }

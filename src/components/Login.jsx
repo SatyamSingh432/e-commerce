@@ -2,10 +2,11 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import "./Login.css";
+import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <>
-      <Header />
+      <Header hasHiddenAuth />
       <div className="container_login">
         <div className="hero_login">
           <div className="login_form">
@@ -17,7 +18,10 @@ const Login = () => {
                 <button>LOGIN TO QKART</button>
               </div>
               <p className="account">
-                Didn't have account? <span>Register now</span>
+                Didn't have account?{" "}
+                <Link className="link" to="/register">
+                  Register now
+                </Link>
               </p>
             </div>
           </div>

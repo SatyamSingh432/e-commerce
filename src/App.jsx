@@ -1,16 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import "./App.css";
-// import Login from "./components/Login";
+import Login from "./components/Login";
 import Register from "./components/Register";
-// import Products from "./components/Products";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Products from "./components/Products";
 function App() {
   return (
-    <>
-      {/* <Products /> */}
-      {/* <Login /> */}
-      <Register />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={Products} />
+        <Route path="/login" Component={Login} />
+        <Route path="/register" Component={Register} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
