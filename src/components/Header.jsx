@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./Header.css";
+import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 const Header = ({ hasHiddenAuth }) => {
   const history = useNavigate();
@@ -30,7 +31,22 @@ const Header = ({ hasHiddenAuth }) => {
               </button>
             </>
           ) : (
-            <button className="explore_btn">BACK TO EXPLORE</button>
+            <>
+              <button
+                className="explore_btn"
+                onClick={() => {
+                  history("/");
+                }}
+              >
+                <FaArrowLeft
+                  style={{
+                    fontSize: "14px",
+                    paddingRight: "6px",
+                  }}
+                />
+                BACK TO EXPLORE
+              </button>
+            </>
           )}
         </div>
       </div>
