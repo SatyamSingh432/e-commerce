@@ -25,3 +25,12 @@
   padding: 0.2rem;
   border-radius: 0.5rem;
 }
+.product_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
