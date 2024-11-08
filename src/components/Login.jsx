@@ -4,9 +4,11 @@ import Footer from "./Footer";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [isName, setIsName] = useState("");
   const [isPassword, setIsPassword] = useState("");
+  const navigate = useNavigate();
   const handlerSubmit = (e) => {
     e.preventDefault();
     if (isName.length === 0) {
@@ -16,7 +18,10 @@ const Login = () => {
     } else {
       const userData = JSON.parse(localStorage.getItem(isName));
       if (userData && isName === userData[0] && isPassword === userData[1]) {
+        setIsName("");
+        setIsPassword("");
         console.log("loggedin");
+        navigate("/");
       } else alert("user doesn't exist");
     }
   };

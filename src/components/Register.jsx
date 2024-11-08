@@ -3,10 +3,12 @@ import Footer from "./Footer";
 import "./Login.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [isName, setIsName] = useState("");
   const [isPassword, setIsPassword] = useState("");
   const [isConPassword, setIsConPassword] = useState("");
+  const navigate = useNavigate();
   const handlerSubmit = (e) => {
     e.preventDefault();
     console.log(23);
@@ -22,6 +24,7 @@ const Register = () => {
       setIsConPassword("");
       setIsName("");
       setIsPassword("");
+      navigate("/login");
     }
   };
   const handleInputName = (e) => {
