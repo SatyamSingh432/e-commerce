@@ -2,9 +2,7 @@ import "./Products.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import ProductCard from "./ProductCard";
-import { useState } from "react";
 const Products = () => {
-  const [isLogOut, setIsLogOut] = useState(false);
   const productData = [
     {
       name: "UNIFACTOR Mens Running Shoes",
@@ -149,7 +147,6 @@ const Products = () => {
           })}
         </div>
       </div>
-
       <Footer />
     </div>
   );

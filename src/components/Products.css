@@ -2,7 +2,7 @@
 } */
 .hero {
   background-image: url("../assets/hero_image.png");
-  height: 22rem;
+  height: 28rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,7 +26,7 @@
   border-radius: 0.5rem;
 }
 .product_grid_container {
-  background-color: #dcffe4;
+  background-color: #e9eeea9b;
   /* background-color: #f6fcdf; */
   display: flex;
   flex-direction: column;
@@ -41,10 +41,9 @@
   color: #00a278;
 }
 .product_grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  align-items: center;
-  justify-content: center;
-  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3rem;
+  row-gap: 2rem;
+  padding-top: 1rem;
 }

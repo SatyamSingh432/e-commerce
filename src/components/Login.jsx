@@ -21,6 +21,7 @@ const Login = () => {
         setIsName("");
         setIsPassword("");
         console.log("loggedin");
+        localStorage.setItem("isLogged", JSON.stringify([true, isName]));
         navigate("/");
       } else alert("user doesn't exist");
     }

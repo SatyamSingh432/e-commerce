@@ -2,6 +2,8 @@
   width: 100%;
   /* position: absolute; */
   background-color: white;
+  position: fixed;
+  z-index: 10;
 }
 .header_container {
   display: flex;
@@ -40,4 +42,31 @@
   font-weight: 500;
   padding-top: 10px;
   cursor: pointer;
+}
+.user_info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav_btns {
+  display: flex;
+  align-items: center;
+}
+.logged_username {
+  font-size: 20px;
+}
+.logout_btn {
+  font-size: 0.9rem;
+  border: none;
+  background-color: #00a278;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
+  padding: 0.8rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.logout_btn:hover {
+  background-color: #017959;
 }
