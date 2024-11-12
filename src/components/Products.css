@@ -51,7 +51,7 @@
 }
 .product_cart {
   display: flex;
-  height: 2350px;
+  height: 100vh;
 }
 .product_sec {
   width: 75%;
@@ -59,6 +59,6 @@
 }
 .cart_sec {
   width: 25%;
-  /* height: 100vh; */
+  height: 100vh;
   overflow-y: scroll;
 }

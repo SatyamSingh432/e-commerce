@@ -9,10 +9,10 @@ const Header = ({ hasHiddenAuth }) => {
   const [isLogged, setIsLogged] = useState(false);
   const [isLoggedUser, setIsLoggedUser] = useState("");
   const logoutHandler = () => {
-    console.log(2313);
     localStorage.removeItem("isLogged");
     setIsLogged(false);
     setIsLoggedUser("");
+    history("/");
   };
   useEffect(() => {
     const login = JSON.parse(localStorage.getItem("isLogged"));

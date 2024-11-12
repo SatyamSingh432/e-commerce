@@ -115,12 +115,19 @@ const Products = () => {
       _id: "z4sLtEcMpzabRyfx",
     },
   ];
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setItems(cartItems);
+  }, []);
   const [isLogin, setIsLoggin] = useState(false);
   useEffect(() => {
-    const user = localStorage.getItem("isLogged");
+    const user = JSON.parse(localStorage.getItem("isLogged"));
     setIsLoggin(user);
+    if (!user) {
+      setIsLoggin(false);
+    }
   }, []);
-
   const displayProducts = () => {
     return (
       <div className="container">
@@ -146,6 +153,7 @@ const Products = () => {
                 {productData.map((ele) => {
                   return (
                     <ProductCard
+                      updateItems={setItems}
                       name={ele.name}
                       key={ele.name}
                       price={ele.cost}
@@ -158,7 +166,7 @@ const Products = () => {
             </div>
           </div>
           <div className="cart_sec">
-            <Cart />
+            <Cart cartItems={items} />
           </div>
         </div>
       ) : (
