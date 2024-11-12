@@ -2,6 +2,8 @@ import "./Products.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import ProductCard from "./ProductCard";
+import { useState, useEffect } from "react";
+import Cart from "./Cart";
 const Products = () => {
   const productData = [
     {
@@ -95,7 +97,7 @@ const Products = () => {
       _id: "x4sLtEcMpzabRyfx",
     },
     {
-      name: "Thinking, Fast and Slow",
+      name: "Thinking, Fast and Slow book ",
       category: "Books",
       cost: 15,
       rating: 5,
@@ -113,40 +115,75 @@ const Products = () => {
       _id: "z4sLtEcMpzabRyfx",
     },
   ];
+  const [isLogin, setIsLoggin] = useState(false);
+  useEffect(() => {
+    const user = localStorage.getItem("isLogged");
+    setIsLoggin(user);
+  }, []);
+
   const displayProducts = () => {
     return (
-      <>
-        <div className="container">
-          <div className="hero">
-            <p className="hero_heading">
-              India’s <span className="hero_highlight">FASTEST DELIVERY</span>{" "}
-              to your door step
-            </p>
-          </div>
+      <div className="container">
+        <div className="hero">
+          <p className="hero_heading">
+            India’s <span className="hero_highlight">FASTEST DELIVERY</span> to
+            your door step
+          </p>
         </div>
-      </>
+      </div>
     );
   };
   return (
     <div className="main_container">
-      <Header />
-      {displayProducts()}
-      <div className="product_grid_container">
-        <h2>PRODUCTS</h2>
-        <div className="product_grid">
-          {productData.map((ele) => {
-            return (
-              <ProductCard
-                name={ele.name}
-                key={ele.name}
-                price={ele.cost}
-                rating={ele.rating}
-                image={ele.image}
-              />
-            );
-          })}
+      {isLogin ? (
+        <div className="product_cart">
+          <div className="product_sec">
+            <Header />
+            {displayProducts()}
+            <div className="product_grid_container">
+              <h2>PRODUCTS</h2>
+              <div className="product_grid">
+                {productData.map((ele) => {
+                  return (
+                    <ProductCard
+                      name={ele.name}
+                      key={ele.name}
+                      price={ele.cost}
+                      rating={ele.rating}
+                      image={ele.image}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <div className="cart_sec">
+            <Cart />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div>
+          <Header />
+          {displayProducts()}
+          <div className="product_grid_container">
+            <h2>PRODUCTS</h2>
+            <div className="product_grid">
+              {productData.map((ele) => {
+                return (
+                  <ProductCard
+                    name={ele.name}
+                    key={ele.name}
+                    price={ele.cost}
+                    rating={ele.rating}
+                    image={ele.image}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </div>
   );

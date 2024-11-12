@@ -13,7 +13,6 @@ function App() {
         <Route path="/" Component={Products} />
         <Route path="/login" Component={Login} />
         <Route path="/register" Component={Register} />
-        {/* <ProductCard /> */}
       </Routes>
     </BrowserRouter>
   );

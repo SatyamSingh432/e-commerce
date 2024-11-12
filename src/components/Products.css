@@ -9,14 +9,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 /* .container {
 } */
 .hero_heading {
-  position: relative;
+  position: absolute;
   font-size: 3rem;
   width: 50%;
-  left: 20rem;
+  left: 50%;
   color: white;
 }
 .hero_highlight {
@@ -32,6 +33,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   padding-top: 2rem;
   padding-bottom: 4rem;
 }
@@ -45,5 +47,18 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 3rem;
   row-gap: 2rem;
-  padding-top: 1rem;
+  padding: 1rem;
+}
+.product_cart {
+  display: flex;
+  height: 2350px;
+}
+.product_sec {
+  width: 75%;
+  overflow-y: auto;
+}
+.cart_sec {
+  width: 25%;
+  /* height: 100vh; */
+  overflow-y: scroll;
 }

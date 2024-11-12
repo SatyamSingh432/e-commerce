@@ -1,0 +1,19 @@
+.cart_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+.empty_cart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+  color: rgba(59, 57, 57, 0.427);
+  top: 15%;
+}
