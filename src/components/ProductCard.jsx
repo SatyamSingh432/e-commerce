@@ -1,7 +1,11 @@
 /* eslint-disable react/prop-types */
 import "./ProductCard.css";
 const ProductCard = (props) => {
-  const card = { image: props.image, price: props.price, name: props.name };
+  const card = {
+    image: props.image,
+    price: props.price,
+    name: props.name,
+  };
   const updateItems = props.updateItems;
   const handleSubmit = (e) => {
     e.preventDefault();

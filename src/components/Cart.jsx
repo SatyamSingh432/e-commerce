@@ -26,6 +26,24 @@ const Cart = ({ cartItems }) => {
             />
           );
         })}
+        <div className="checkout">
+          <div className="total">
+            <div className="grand_total">Grand Total</div>
+            <div className="total_price">$500</div>
+          </div>
+          <div className="checkout_btn_container">
+            <button className="checkout_btn">
+              <FaCartArrowDown
+                style={{
+                  fontSize: "18px",
+                  color: "white",
+                  paddingRight: "10px",
+                }}
+              />
+              CHECKOUT
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
