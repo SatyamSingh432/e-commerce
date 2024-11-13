@@ -4,7 +4,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
-const Header = ({ hasHiddenAuth }) => {
+const Header = ({ hasHiddenAuth, login }) => {
   const history = useNavigate();
   const [isLogged, setIsLogged] = useState(false);
   const [isLoggedUser, setIsLoggedUser] = useState("");
@@ -12,7 +12,7 @@ const Header = ({ hasHiddenAuth }) => {
     localStorage.removeItem("isLogged");
     setIsLogged(false);
     setIsLoggedUser("");
-    history("/");
+    login(false);
   };
   useEffect(() => {
     const login = JSON.parse(localStorage.getItem("isLogged"));

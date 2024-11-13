@@ -115,18 +115,24 @@ const Products = () => {
       _id: "z4sLtEcMpzabRyfx",
     },
   ];
+
+  // -------------------------------------------------------------------------------------------------------
+  // from here we sending items to cart.jsx( to re-render our cart.jsx when  we update items by ADD TO CART BUTTON from profuctCard.jsx )
+  // and we sending setItems to productCard.jsx to update it .
+  //
+
   const [items, setItems] = useState([]);
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     setItems(cartItems);
   }, []);
+
+  // --------------------------------------------------------------------------------------------------------
+
   const [isLogin, setIsLoggin] = useState(false);
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("isLogged"));
     setIsLoggin(user);
-    if (!user) {
-      setIsLoggin(false);
-    }
   }, []);
   const displayProducts = () => {
     return (
@@ -145,7 +151,8 @@ const Products = () => {
       {isLogin ? (
         <div className="product_cart">
           <div className="product_sec">
-            <Header />
+            {/* sending setIsLoggin state as props to header, so that after click on logout button cart section disapear */}
+            <Header login={setIsLoggin} />
             {displayProducts()}
             <div className="product_grid_container">
               <h2>PRODUCTS</h2>
@@ -171,7 +178,8 @@ const Products = () => {
         </div>
       ) : (
         <div>
-          <Header />
+          {/* sending setIsLoggin state as props to header, so that after click on logout button cart section disapear */}
+          <Header login={setIsLoggin} />
           {displayProducts()}
           <div className="product_grid_container">
             <h2>PRODUCTS</h2>

@@ -51,14 +51,15 @@
 }
 .product_cart {
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
 }
 .product_sec {
   width: 75%;
+  height: 100vh;
   overflow-y: auto;
 }
 .cart_sec {
   width: 25%;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }

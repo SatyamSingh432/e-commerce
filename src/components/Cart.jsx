@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/no-unknown-property */
 import { FaCartArrowDown } from "react-icons/fa";
 import "./Cart.css";
 import CartCard from "./CartCard";
