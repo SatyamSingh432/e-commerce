@@ -50,30 +50,30 @@ const Register = () => {
               <div className="title_login">Register</div>
               <form onSubmit={handlerSubmit}>
                 <div className="detail_login">
-                  <textarea
+                  <input
                     name="username"
                     id="username"
                     placeholder="Username"
                     value={isName}
                     onChange={handleInputName}
-                  ></textarea>
+                  ></input>
                   <div className="password_limit">
-                    <textarea
+                    <input
                       name="password"
                       id="password"
                       placeholder="Password"
                       value={isPassword}
                       onChange={handleInputPassword}
-                    ></textarea>
+                    ></input>
                     <p>Password must be atleast 6 characters length</p>
                   </div>
-                  <textarea
+                  <input
                     name="confirmPassword"
                     id="confirmPassword"
                     placeholder="Confirm Password"
                     value={isConPassword}
                     onChange={handleInputConPassword}
-                  ></textarea>
+                  ></input>
                   <button type="submit">REGISTER NOW</button>
                 </div>
               </form>

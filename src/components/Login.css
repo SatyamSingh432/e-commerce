@@ -52,7 +52,7 @@
   flex-direction: column;
   gap: 15px;
 }
-.detail_login textarea {
+.detail_login input {
   height: 55px;
   resize: none;
   border: 1px solid #cccccc;

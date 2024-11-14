@@ -42,20 +42,20 @@ const Login = () => {
               <div className="title_login">Login</div>
               <form onSubmit={handlerSubmit}>
                 <div className="detail_login">
-                  <textarea
+                  <input
                     name="username"
                     id="username"
                     placeholder="Username"
                     value={isName}
                     onChange={handlerName}
-                  ></textarea>
-                  <textarea
+                  ></input>
+                  <input
                     name="password"
                     id="password"
                     placeholder="Password"
                     value={isPassword}
                     onChange={handlerPassword}
-                  ></textarea>
+                  ></input>
                   <button type="submit">LOGIN TO QKART</button>
                 </div>
               </form>
