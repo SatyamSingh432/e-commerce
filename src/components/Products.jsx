@@ -70,7 +70,7 @@ const Products = () => {
             </div>
           </div>
           <div className="cart_sec">
-            <Cart cartItems={items} />
+            <Cart cartItems={items} setItems={setItems} />
           </div>
         </div>
       ) : (

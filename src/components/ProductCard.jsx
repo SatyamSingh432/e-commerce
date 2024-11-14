@@ -21,7 +21,6 @@ const ProductCard = (props) => {
       // Check if item exist
       let isItemExists = cardData.find((localCard) => localCard.id === card.id);
 
-      console.log({ isItemExists });
       if (isItemExists) {
         // increase quanity
         const newData = cardData.map((localCard) => {

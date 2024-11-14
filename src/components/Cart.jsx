@@ -2,7 +2,7 @@
 import { FaCartArrowDown } from "react-icons/fa";
 import "./Cart.css";
 import CartCard from "./CartCard";
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, setItems }) => {
   let grandTotal = 0;
   cartItems.map((ele) => {
     grandTotal += ele.price * ele.quantity;
@@ -25,6 +25,7 @@ const Cart = ({ cartItems }) => {
         {cartItems.map((ele) => {
           return (
             <CartCard
+              setItems={setItems}
               key={ele.name}
               name={ele.name}
               price={ele.price}
