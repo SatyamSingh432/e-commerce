@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 34rem;
+  height: 36rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
   position: absolute;
   left: 60rem;
-  top: 8.4rem;
+  top: 9.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
   position: absolute;
   left: 60rem;
-  top: 5.2rem;
+  top: 6.2rem;
   display: flex;
   justify-content: center;
   align-items: center;

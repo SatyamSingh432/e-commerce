@@ -43,6 +43,7 @@ const Login = () => {
               <form onSubmit={handlerSubmit}>
                 <div className="detail_login">
                   <input
+                    type="text"
                     name="username"
                     id="username"
                     placeholder="Username"
@@ -50,6 +51,7 @@ const Login = () => {
                     onChange={handlerName}
                   ></input>
                   <input
+                    type="password"
                     name="password"
                     id="password"
                     placeholder="Password"

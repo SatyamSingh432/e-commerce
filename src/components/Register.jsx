@@ -47,6 +47,7 @@ const Register = () => {
               <form onSubmit={handlerSubmit}>
                 <div className="detail_login">
                   <input
+                    type="text"
                     name="username"
                     id="username"
                     placeholder="Username"
@@ -55,6 +56,7 @@ const Register = () => {
                   ></input>
                   <div className="password_limit">
                     <input
+                      type="text"
                       name="password"
                       id="password"
                       placeholder="Password"
@@ -64,6 +66,7 @@ const Register = () => {
                     <p>Password must be atleast 6 characters length</p>
                   </div>
                   <input
+                    type="text"
                     name="confirmPassword"
                     id="confirmPassword"
                     placeholder="Confirm Password"
