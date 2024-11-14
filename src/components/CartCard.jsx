@@ -14,7 +14,7 @@ const CartCard = (props) => {
               {" "}
               <RiSubtractLine style={{ fontSize: "22px" }} />
             </button>
-            <div className="product_number">1</div>
+            <div className="product_number">{props.quantity}</div>
             <button className="add">
               {" "}
               <IoIosAdd style={{ fontSize: "22px" }} />

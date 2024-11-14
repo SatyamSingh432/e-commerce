@@ -3,6 +3,11 @@ import { FaCartArrowDown } from "react-icons/fa";
 import "./Cart.css";
 import CartCard from "./CartCard";
 const Cart = ({ cartItems }) => {
+  let grandTotal = 0;
+  cartItems.map((ele) => {
+    grandTotal += ele.price * ele.quantity;
+  });
+
   if (cartItems.length === 0) {
     return (
       <div className="cart_container">
@@ -13,6 +18,7 @@ const Cart = ({ cartItems }) => {
       </div>
     );
   }
+
   return (
     <div className="cart_container">
       <div className="cart_cont_child">
@@ -23,13 +29,15 @@ const Cart = ({ cartItems }) => {
               name={ele.name}
               price={ele.price}
               image={ele.image}
+              quantity={ele.quantity}
+              id={ele.id}
             />
           );
         })}
         <div className="checkout">
           <div className="total">
             <div className="grand_total">Grand Total</div>
-            <div className="total_price">$500</div>
+            <div className="total_price">${grandTotal}</div>
           </div>
           <div className="checkout_btn_container">
             <button className="checkout_btn">

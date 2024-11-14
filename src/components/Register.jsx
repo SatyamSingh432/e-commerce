@@ -11,8 +11,7 @@ const Register = () => {
   const navigate = useNavigate();
   const handlerSubmit = (e) => {
     e.preventDefault();
-    console.log(23);
-    console.log(isPassword.length);
+
     if (isName.length === 0) {
       alert("no name");
     } else if (isPassword.length < 6) {
@@ -28,15 +27,12 @@ const Register = () => {
     }
   };
   const handleInputName = (e) => {
-    console.log(e.target.value);
     setIsName(e.target.value);
   };
   const handleInputPassword = (e) => {
-    console.log(e.target.value);
     setIsPassword(e.target.value);
   };
   const handleInputConPassword = (e) => {
-    console.log(e.target.value);
     setIsConPassword(e.target.value);
   };
 
