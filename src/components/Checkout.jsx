@@ -48,7 +48,9 @@ const Checkout = () => {
               <hr />
               <div className="wallet">
                 <div className="wallet_heading">Wallet</div>
-                <div className="wallet_amount">Pay $0 of available $5000</div>
+                <div className="wallet_amount">
+                  {`Pay $${total} of available $5000`}
+                </div>
               </div>
               <button className="order_place">
                 <IoFolderSharp style={{ paddingRight: "6px" }} />

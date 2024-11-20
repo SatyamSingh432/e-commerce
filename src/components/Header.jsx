@@ -11,6 +11,7 @@ const Header = ({ hasHiddenAuth, login }) => {
   const logoutHandler = () => {
     localStorage.removeItem("isLogged");
     localStorage.removeItem("cartItems");
+    history("/");
     setIsLogged(false);
     setIsLoggedUser("");
     login(false);
