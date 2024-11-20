@@ -3,11 +3,15 @@ import Header from "./Header";
 import { IoFolderSharp } from "react-icons/io5";
 import Cart from "./Cart";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 const Checkout = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [qty, setQty] = useState(0);
   const [total, setTotal] = useState(0);
+  const [address, setAddress] = useState("");
+
   useEffect(() => {
     const cartData = JSON.parse(localStorage.getItem("cartItems"));
     setData(cartData);
@@ -20,7 +24,17 @@ const Checkout = () => {
     setQty(totalQty);
     setTotal(totalAmount);
   }, []);
-
+  const addressHandler = (e) => {
+    const custAddress = e.target.value;
+    setAddress(custAddress);
+  };
+  const submitHandler = () => {
+    if (address.length >= 20) {
+      navigate("/");
+    } else {
+      alert("Address must be of atleast 20 words or more");
+    }
+  };
   return (
     <>
       <Header />
@@ -39,6 +53,8 @@ const Checkout = () => {
               <textarea
                 className="input_address"
                 placeholder="Enter your complete address"
+                onChange={addressHandler}
+                value={address}
               ></textarea>
               {/* <button className="add_address">Add Address</button> */}
             </div>
@@ -52,7 +68,7 @@ const Checkout = () => {
                   {`Pay $${total} of available $5000`}
                 </div>
               </div>
-              <button className="order_place">
+              <button className="order_place" onClick={submitHandler}>
                 <IoFolderSharp style={{ paddingRight: "6px" }} />
                 PLACE ORDER
               </button>
