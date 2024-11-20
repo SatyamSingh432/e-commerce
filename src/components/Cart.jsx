@@ -2,7 +2,13 @@
 import { FaCartArrowDown } from "react-icons/fa";
 import "./Cart.css";
 import CartCard from "./CartCard";
-const Cart = ({ cartItems, setItems }) => {
+import { useNavigate } from "react-router-dom";
+
+const Cart = ({ cartItems, setItems, hideButton }) => {
+  const navigate = useNavigate();
+  const handlerCheckout = () => {
+    navigate("/checkout");
+  };
   let grandTotal = 0;
   cartItems.map((ele) => {
     grandTotal += ele.price * ele.quantity;
@@ -32,6 +38,7 @@ const Cart = ({ cartItems, setItems }) => {
               image={ele.image}
               quantity={ele.quantity}
               id={ele.id}
+              hideButton={hideButton}
             />
           );
         })}
@@ -40,18 +47,20 @@ const Cart = ({ cartItems, setItems }) => {
             <div className="grand_total">Grand Total</div>
             <div className="total_price">${grandTotal}</div>
           </div>
-          <div className="checkout_btn_container">
-            <button className="checkout_btn">
-              <FaCartArrowDown
-                style={{
-                  fontSize: "18px",
-                  color: "white",
-                  paddingRight: "10px",
-                }}
-              />
-              CHECKOUT
-            </button>
-          </div>
+          {hideButton ? null : (
+            <div className="checkout_btn_container">
+              <button className="checkout_btn" onClick={handlerCheckout}>
+                <FaCartArrowDown
+                  style={{
+                    fontSize: "18px",
+                    color: "white",
+                    paddingRight: "10px",
+                  }}
+                />
+                CHECKOUT
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

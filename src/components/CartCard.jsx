@@ -51,17 +51,21 @@ const CartCard = (props) => {
       <div className="cart_card_details">
         <div className="cart_card_name">{props.name}</div>
         <div className="cart_card_info">
-          <div className="cart_card_btn">
-            <button className="subtract" onClick={subtractHandler}>
-              {" "}
-              <RiSubtractLine style={{ fontSize: "22px" }} />
-            </button>
-            <div className="product_number">{props.quantity}</div>
-            <button className="add" onClick={addHandler}>
-              {" "}
-              <IoIosAdd style={{ fontSize: "22px" }} />
-            </button>
-          </div>
+          {props.hideButton ? (
+            <div className="product_number">Qty: {props.quantity}</div>
+          ) : (
+            <div className="cart_card_btn">
+              <button className="subtract" onClick={subtractHandler}>
+                {" "}
+                <RiSubtractLine style={{ fontSize: "22px" }} />
+              </button>
+              <div className="product_number">{props.quantity}</div>
+              <button className="add" onClick={addHandler}>
+                {" "}
+                <IoIosAdd style={{ fontSize: "22px" }} />
+              </button>
+            </div>
+          )}
           <div className="cart_cart_price">{props.price}</div>
         </div>
       </div>
