@@ -53,7 +53,7 @@ hr {
 .cart_data {
   width: 30%;
   overflow-y: auto;
-  height: 100vh;
+  height: 800px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

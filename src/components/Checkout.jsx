@@ -3,6 +3,7 @@ import Header from "./Header";
 import { IoFolderSharp } from "react-icons/io5";
 import Cart from "./Cart";
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 const Checkout = () => {
   const [data, setData] = useState([]);
   const [qty, setQty] = useState(0);
@@ -82,6 +83,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
