@@ -5,6 +5,7 @@ import Cart from "./Cart";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import { toast } from "react-toastify";
 const Checkout = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
@@ -36,12 +37,13 @@ const Checkout = () => {
       if (remainingBalance >= 0) {
         setBalance(remainingBalance);
         localStorage.setItem("balance", JSON.stringify(remainingBalance));
+        toast.success("Order placed successfully");
         navigate("/thanks");
       } else {
-        alert("Insufficient wallet balance. Please add funds.");
+        toast.error("Insufficient wallet balance. Please add funds.");
       }
     } else {
-      alert("Address must be of atleast 20 words or more");
+      toast.error("Address must be of atleast 20 words or more");
     }
   };
   return (

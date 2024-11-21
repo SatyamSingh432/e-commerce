@@ -5,6 +5,7 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const Login = () => {
   const [isName, setIsName] = useState("");
   const [isPassword, setIsPassword] = useState("");
@@ -12,18 +13,18 @@ const Login = () => {
   const handlerSubmit = (e) => {
     e.preventDefault();
     if (isName.length === 0) {
-      alert("name is empty");
+      toast.error("name is empty");
     } else if (isPassword.length === 0) {
-      alert("password is required");
+      toast.warning("password is required");
     } else {
       const userData = JSON.parse(localStorage.getItem(isName));
       if (userData && isName === userData[0] && isPassword === userData[1]) {
         setIsName("");
         setIsPassword("");
-
+        toast.success("Logged In");
         localStorage.setItem("isLogged", JSON.stringify([true, isName]));
         navigate("/");
-      } else alert("user doesn't exist");
+      } else toast.error("user doesn't exist");
     }
   };
   const handlerName = (e) => {

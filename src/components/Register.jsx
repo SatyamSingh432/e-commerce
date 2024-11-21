@@ -4,6 +4,8 @@ import "./Login.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
   const [isName, setIsName] = useState("");
   const [isPassword, setIsPassword] = useState("");
@@ -13,13 +15,14 @@ const Register = () => {
     e.preventDefault();
 
     if (isName.length === 0) {
-      alert("no name");
+      toast.error("no name");
     } else if (isPassword.length < 6) {
-      alert("small password");
+      toast.warning("small password");
     } else if (isPassword !== isConPassword) {
-      alert("password didn't match");
+      toast.error("password didn't match");
     } else {
       localStorage.setItem(isName, JSON.stringify([isName, isPassword]));
+      toast.success("Registration Complete");
       setIsConPassword("");
       setIsName("");
       setIsPassword("");
@@ -56,7 +59,7 @@ const Register = () => {
                   ></input>
                   <div className="password_limit">
                     <input
-                      type="text"
+                      type="password"
                       name="password"
                       id="password"
                       placeholder="Password"
@@ -66,7 +69,7 @@ const Register = () => {
                     <p>Password must be atleast 6 characters length</p>
                   </div>
                   <input
-                    type="text"
+                    type="password"
                     name="confirmPassword"
                     id="confirmPassword"
                     placeholder="Confirm Password"
