@@ -11,7 +11,9 @@ const Checkout = () => {
   const [qty, setQty] = useState(0);
   const [total, setTotal] = useState(0);
   const [address, setAddress] = useState("");
-
+  const [balance, setBalance] = useState(
+    JSON.parse(localStorage.getItem("balance")) || 5000
+  );
   useEffect(() => {
     const cartData = JSON.parse(localStorage.getItem("cartItems"));
     setData(cartData);
@@ -30,7 +32,14 @@ const Checkout = () => {
   };
   const submitHandler = () => {
     if (address.length >= 20) {
-      navigate("/");
+      const remainingBalance = balance - total;
+      if (remainingBalance >= 0) {
+        setBalance(remainingBalance);
+        localStorage.setItem("balance", JSON.stringify(remainingBalance));
+        navigate("/thanks");
+      } else {
+        alert("Insufficient wallet balance. Please add funds.");
+      }
     } else {
       alert("Address must be of atleast 20 words or more");
     }
@@ -65,7 +74,7 @@ const Checkout = () => {
               <div className="wallet">
                 <div className="wallet_heading">Wallet</div>
                 <div className="wallet_amount">
-                  {`Pay $${total} of available $5000`}
+                  {`Pay $${total} of available $${balance}`}
                 </div>
               </div>
               <button className="order_place" onClick={submitHandler}>
