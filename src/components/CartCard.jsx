@@ -47,7 +47,12 @@ const CartCard = (props) => {
 
   return (
     <div className="cart_card_cont">
-      <img src={props.image} alt="de" className="cart_card_image" />
+      <img
+        src={props.image}
+        alt="de"
+        title={props.name}
+        className="cart_card_image"
+      />
       <div className="cart_card_details">
         <div className="cart_card_name">{props.name}</div>
         <div className="cart_card_info">

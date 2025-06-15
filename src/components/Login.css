@@ -6,16 +6,15 @@
   height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .login_form {
   height: 22rem;
   width: 28rem;
   background-color: white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
-  position: absolute;
-  left: 60rem;
-  top: 9.2rem;
+  margin-right: 5vw;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,9 +25,7 @@
   width: 28rem;
   background-color: white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.231);
-  position: absolute;
-  left: 60rem;
-  top: 6.2rem;
+  margin-right: 5vw;
   display: flex;
   justify-content: center;
   align-items: center;

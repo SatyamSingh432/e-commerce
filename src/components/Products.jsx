@@ -25,7 +25,8 @@ const Products = () => {
   const [isLogin, setIsLoggin] = useState(false);
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("isLogged"));
-    setIsLoggin(user);
+    console.log(user[0]);
+    setIsLoggin(user[0]);
   }, []);
 
   const HeroSection = () => {
@@ -51,7 +52,7 @@ const Products = () => {
             <HeroSection />
             <div className="product_grid_container">
               <h2>PRODUCTS</h2>
-              <div className="product_grid">
+              <div className="product_grid" style={{ fontSize: "14px" }}>
                 {productData.map((ele) => {
                   return (
                     <ProductCard
