@@ -25,8 +25,7 @@ const Products = () => {
   const [isLogin, setIsLoggin] = useState(false);
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("isLogged"));
-    console.log(user[0]);
-    setIsLoggin(user[0]);
+    setIsLoggin(user);
   }, []);
 
   const HeroSection = () => {
